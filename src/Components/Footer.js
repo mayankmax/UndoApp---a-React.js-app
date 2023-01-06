@@ -15,7 +15,7 @@ function Footer() {
                         </div>
                         <div className="col-lg-4">
                             <div className="phone-no">
-                                <a href="tel:+91 8789601355"><i className="fa fa-mobile" aria-hidden="true"></i>Call +91 8789610355</a>
+                                <a href={"tel:+91 8789601355"}><i className="fa fa-mobile" aria-hidden="true"></i>Call +91 8789610355</a>
                             </div>
                         </div>
                     </div>
@@ -40,9 +40,9 @@ function Footer() {
                     <div className="col-md-4">
                         <h4>Follow us</h4>
                         <ul className="social-icon">
-                            <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href={"#"}><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href={"#"}><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href={"#"}><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
 
@@ -58,7 +58,7 @@ function Footer() {
                     </div>
                     <div className="col-sm-7">
                         <ul>
-                            <li><a href="#">Home</a></li>
+                            <li><a href={"#"}>Home</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Our services</a></li>
                             <li><a href="#">Contact Us</a></li>

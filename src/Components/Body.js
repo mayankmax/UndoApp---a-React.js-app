@@ -22,7 +22,7 @@ class Stack {
   
   push(item) {
     // document.getElementById("wordcount").innerHTML = item;
-    this.inputLength = item.length;
+    
     this.items.push(item);
     this.top = this.top + 1;
   }
@@ -45,7 +45,10 @@ class Stack {
 
 function Body() {
 
+  const state = {button:1};
+
   var s = new Stack();
+  var Redo  = new Stack();
   var i=0;
   const [textname , setName] = useState('');
 
@@ -71,18 +74,36 @@ function Body() {
   // click on submit button .
   const handleSubmit=(e)=>{
 
-     //console.log(textname);
-     var a = s.peek();
+    e.preventDefault();
+
+    if (state.button === 1) {
+      var a = s.peek();
      var c = a.length;
+     Redo.push(a);
      s.pop();
      var rekensom  = document.getElementById('form2').value;
-     document.getElementById('form2').value=rekensom.slice(0,rekensom.length-c-1);
+     document.getElementById('form2').value=rekensom.substring(0,rekensom.length-c-1);
       document.getElementById("wordcount").innerHTML = a;
+    }
+    if (state.button === 2) {
+
+      var b = Redo.peek();
+      //var c = a.length;
+      s.push(b);
+      Redo.pop();
+      var rekensom  = document.getElementById('form2').value;
+      //document.getElementById('form2').value=rekensom.substring(0,rekensom.length-c-1);
+       document.getElementById("wordcount1").innerHTML = b;
+      
+    }
+
+     //console.log(textname);
+     
     
       // display alert box with user
       // 'name' and 'email' details .
      
-    e.preventDefault();
+    
 
   }
 
@@ -98,13 +119,23 @@ function Body() {
             </Form.Group>
         
             <div className="mb-2">
-                <Button variant="primary" size="lg" type="submit" value="Submit">
+                <Button variant="primary" size="lg" onClick={() => (state.button = 1)}
+        type="submit"
+        name="btn1"
+        value="Undo Me">
                   Undo Me
+                </Button>
+                <Button variant="primary" size="lg" onClick={() => (state.button = 2)}
+        type="submit"
+        name="btn2"
+        value="Redo Me">
+                  ReDo Me
                 </Button>
             </div>
             
        </Form>
        <span id="wordcount"></span>
+       <span id="wordcount1"></span>
         </Col>
       </Row>
     </Container>
