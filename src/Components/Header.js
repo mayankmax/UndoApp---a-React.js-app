@@ -15,7 +15,7 @@ function Header() {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            React Bootstrap
+           Simple Undo App
           </Navbar.Brand>
         </Container>
       </Navbar>
